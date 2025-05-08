@@ -1,23 +1,25 @@
-# Hotel Api
-This proyect is full api Rest created in spring boot whith Authorization and Authentification
+# Hotel API
 
-This app have two roles the role of USER and ADMIN, then each role can acces a only the speficic urls
+This project is a full REST API built with Spring Boot, featuring authentication and authorization.
 
-Also the app have the best practice and have unit test that garntize the quality of the code
+The application defines two roles: **USER** and **ADMIN**. Each role has access only to specific URLs according to its permissions.
 
-## 🚀 THECHNOLOGIES 
-- **Spring Boot** – RESTful microservice.
-- **Spring Security** – Autherizaction of roles.
-- **JPA** – Percistence of data.
-- **JWT** – RESTful microservice.
-- **Swagger** – Api Documentation.
-- **Junit** – Unit test.
-- **Mockito** – Mock test of the app.
-- **Docker** – Service containerization.
+The project follows best practices and includes unit tests to ensure code quality.
+
+## 🚀 TECHNOLOGIES
+
+- **Spring Boot** – RESTful microservice framework.  
+- **Spring Security** – Role-based authorization.  
+- **JPA** – Data persistence.  
+- **JWT** – JSON Web Token for stateless authentication.  
+- **Swagger** – API documentation.  
+- **JUnit** – Unit testing framework.  
+- **Mockito** – Mocking framework for tests.  
+- **Docker** – Service containerization. 
 
 ## 🚀 Build and Run the Application with Docker
 
-### 1. Compile the Java application
+### 1. Compile And install the Java application
 mvn clean package
 
 docker build -t hotel .
@@ -38,6 +40,13 @@ ACCESSS TO FOLLOW URL:http://localhost:8080/swagger-ui/index.html
 
 ### 3. TEST THE ENPOINTS
 ![image](https://github.com/user-attachments/assets/2f131ede-b32f-4cc5-b14e-78787f68e8a8)
+
+IF you don't have the correct Authorization
+![image](https://github.com/user-attachments/assets/ce91913e-afae-4679-8792-8328aa1ee54d)
+
+## ✅ TESTS
+![image](https://github.com/user-attachments/assets/574e9a37-1bdf-4c53-b2cc-eaf79ca190c9)
+![image](https://github.com/user-attachments/assets/b09ed90a-ddc2-46f5-9627-005e9fc0801d)
 
 
 
