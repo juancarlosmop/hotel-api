@@ -18,10 +18,11 @@ The project follows best practices and includes unit tests to ensure code qualit
 - **Docker** – Containerization of the application  
 
 ## 🛠️ Build and Run with Docker
+### Package the application:
 mvn clean package
-
+### Build the Docker image:
 docker build -t hotel .
-
+### Run the Docker container:
 docker run -p 8080:8080 hotel
 
 
