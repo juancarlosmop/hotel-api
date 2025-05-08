@@ -24,6 +24,8 @@ mvn clean package
 docker build -t hotel .
 ### Run the Docker container:
 docker run -p 8080:8080 hotel
+## ✅ Docker pull image
+docker pull 05700/hotel-api
 
 
 ## ✅ Swagger UI
