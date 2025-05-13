@@ -82,9 +82,6 @@ public class JwtFilter extends OncePerRequestFilter {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 return;
             }
-        }else {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);  // No se proporciona token
-            return;
         }
 
         filterChain.doFilter(request, response);

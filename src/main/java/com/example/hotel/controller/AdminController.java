@@ -39,7 +39,7 @@ public class AdminController {
 
 
     @Operation(summary = "Delete User", description = "Delete user by email")
-    @ApiResponse(responseCode = "200", description = "The uses was deleted")
+    @ApiResponse(responseCode = "200", description = "The user was deleted")
     @ApiResponse(responseCode = "404", description = "User was not found")
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/users/{id}")
@@ -49,7 +49,7 @@ public class AdminController {
 
     @Operation(summary = "Create a new room", description = "Receives a room and save in database")
     @ApiResponse(responseCode = "200", description = "The room was created")
-    @ApiResponse(responseCode = "500", description = "The room already exist")
+    @ApiResponse(responseCode = "409", description = "The room already exist")
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/rooms")
     public ResponseEntity<GeneralResponse<Void>> createRoom(@Valid @RequestBody RoomRequest request){

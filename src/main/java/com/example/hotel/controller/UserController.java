@@ -29,7 +29,7 @@ public class UserController {
 
     @Operation(summary = "Get users", description = "Get user by email")
     @ApiResponse(responseCode = "200", description = "Get user ")
-    @ApiResponse(responseCode = "404", description = "The ser was not found")
+    @ApiResponse(responseCode = "404", description = "The user was not found")
     @PreAuthorize("hasRole('USER')  or hasRole('ADMIN')")
     @GetMapping("/profile/{email}")
     public ResponseEntity<GeneralResponse<UserResponse>> getUser(@PathVariable("email") String email) {
@@ -38,7 +38,7 @@ public class UserController {
 
     @Operation(summary = "Update user", description = "Update user by email")
     @ApiResponse(responseCode = "200", description = "The user was updated ")
-    @ApiResponse(responseCode = "404", description = "The ser was not found")
+    @ApiResponse(responseCode = "404", description = "The user was not found")
     @PreAuthorize("hasRole('USER')  or hasRole('ADMIN')")
     @PutMapping("/profile/{email}")
     public ResponseEntity<GeneralResponse<UserResponse>> updateUser(@PathVariable("email") String email, @Valid @RequestBody UserRequest userRequest) {
@@ -55,7 +55,7 @@ public class UserController {
     }
     @Operation(summary = "Create a Reservation", description = "Create a reservation resived a reservation an save in database")
     @ApiResponse(responseCode = "200", description = "The reservation was created")
-    @ApiResponse(responseCode = "500", description = "The check-in date can not be in the past,The check-in date must be less than check-out,The check-in cant not be equal than check-out, Internal error")
+    @ApiResponse(responseCode = "422", description = "The check-in date can not be in the past,The check-in date must be less than check-out,The check-in cant not be equal than check-out, Internal error")
     @PreAuthorize("hasRole('USER')")
     @PostMapping("/create-reservation")
     public ResponseEntity<GeneralResponse<Void>> createReservation(@Valid @RequestBody ReservationRequest request){
